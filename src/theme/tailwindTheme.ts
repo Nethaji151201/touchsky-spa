@@ -1,7 +1,7 @@
-import { COLORS } from '@/constants/colors'
-import { FONT_FAMILY } from '@/constants/typography'
-import { RADIUS } from '@/constants/radius'
-import { SHADOWS } from '@/constants/shadows'
+import { COLORS } from '../constants/colors'
+import { FONT_FAMILY } from '../constants/typography'
+import { RADIUS } from '../constants/radius'
+import { SHADOWS } from '../constants/shadows'
 
 const light = COLORS.light
 

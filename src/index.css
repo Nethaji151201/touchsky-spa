@@ -65,15 +65,15 @@
 
 @layer components {
   .glass-panel {
-    @apply border border-border/50 bg-surface/80 shadow-glass backdrop-blur-xl;
+    @apply border border-border/20 bg-surface/90 shadow-glow backdrop-blur-2xl;
   }
 
   .gradient-text {
-    @apply bg-gradient-primary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
 
   .section-padding {
-    @apply py-16 md:py-24 lg:py-28;
+    @apply py-20 md:py-28 lg:py-32;
   }
 }
 
