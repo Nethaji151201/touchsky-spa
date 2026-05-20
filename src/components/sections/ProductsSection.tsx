@@ -38,9 +38,9 @@ export function ProductsSection() {
                 <p className="mt-4 text-sm leading-7 text-text-secondary">
                   {product.description}
                 </p>
-                <div className="mt-8 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary/10 via-secondary/10 to-transparent p-4">
+                {/* <div className="mt-8 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary/10 via-secondary/10 to-transparent p-4">
                   <div className="h-36 rounded-[1.5rem] bg-slate-950/90" />
-                </div>
+                </div> */}
               </Card>
             </motion.div>
           ))}

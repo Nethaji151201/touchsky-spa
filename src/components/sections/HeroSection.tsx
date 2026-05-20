@@ -20,7 +20,7 @@ export function HeroSection() {
           initial={prefersReducedMotion ? "visible" : "hidden"}
           animate="visible"
           variants={FRAMER_VARIANTS.staggerContainer}
-          className="grid items-center gap-16 lg:grid-cols-[1.05fr_.95fr]"
+          className="grid items-center gap-16 "
         >
           <motion.div
             variants={FRAMER_VARIANTS.fadeUp}
@@ -90,7 +90,7 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={FRAMER_VARIANTS.fadeUp} className="relative">
+          {/* <motion.div variants={FRAMER_VARIANTS.fadeUp} className="relative">
             <div className="glass-panel overflow-hidden rounded-[2.5rem] border border-primary/10 bg-surface/90 shadow-glow-lg">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-slate-950/95 p-8 text-white">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(45,212,191,0.18),transparent_30%)]" />
@@ -135,7 +135,7 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </Container>
     </section>

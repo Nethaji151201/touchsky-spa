@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --color-primary: #0f766e;
-    --color-primary-hover: #0d9488;
-    --color-secondary: #14b8a6;
-    --color-background: #f8fafc;
+    --color-primary: #559dcc;
+    --color-primary-hover: #3f7bb2;
+    --color-secondary: #d8ab45;
+    --color-background: #f5f8fc;
     --color-surface: #ffffff;
-    --color-surface-glass: rgba(255, 255, 255, 0.72);
-    --color-text-primary: #0f172a;
+    --color-surface-glass: rgba(255, 255, 255, 0.78);
+    --color-text-primary: #0d1f33;
     --color-text-secondary: #475569;
-    --color-text-muted: #94a3b8;
-    --color-border: #e2e8f0;
-    --shadow-glass: 0 8px 32px rgba(15, 23, 42, 0.08);
-    --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.25);
+    --color-text-muted: #6b7280;
+    --color-border: #dce3eb;
+    --shadow-glass: 0 8px 32px rgba(13, 27, 46, 0.08);
+    --shadow-glow: 0 0 40px rgba(85, 157, 204, 0.18);
   }
 
   .dark {
-    --color-primary: #2dd4bf;
-    --color-primary-hover: #5eead4;
-    --color-secondary: #14b8a6;
-    --color-background: #0b1120;
-    --color-surface: #111827;
-    --color-surface-glass: rgba(17, 24, 39, 0.72);
+    --color-primary: #81b6ff;
+    --color-primary-hover: #a1d0ff;
+    --color-secondary: #d8ab45;
+    --color-background: #071e2f;
+    --color-surface: #102840;
+    --color-surface-glass: rgba(16, 40, 64, 0.76);
     --color-text-primary: #f8fafc;
     --color-text-secondary: #cbd5e1;
-    --color-text-muted: #64748b;
-    --color-border: #1e293b;
+    --color-text-muted: #94a3b8;
+    --color-border: #1f3045;
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0 0 40px rgba(45, 212, 191, 0.2);
+    --shadow-glow: 0 0 40px rgba(85, 157, 204, 0.2);
   }
 
   html {

@@ -1,13 +1,21 @@
-import { Controller, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Send } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-import { Input } from '@/components/ui/Input'
-import { contactSchema, type ContactFormValues } from './contactSchema'
-import { useContactSubmit } from './useContactSubmit'
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Send } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
+import { contactSchema, type ContactFormValues } from "./contactSchema";
+import { useContactSubmit } from "./useContactSubmit";
+import { APP_CONFIG } from "@/constants/appConfig";
+import emailjs from "@emailjs/browser";
+import { useAppStore } from "@/store/useAppStore";
 
 export function ContactForm() {
-  const { submit, isSubmitting } = useContactSubmit()
+  const { submit, isSubmitting } = useContactSubmit();
+  const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const showToast = useAppStore((s) => s.showToast);
+
   const {
     control,
     handleSubmit,
@@ -15,13 +23,41 @@ export function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { name: '', email: '', company: '', message: '' },
-  })
+    defaultValues: { name: "", email: "", number: "", message: "" },
+  });
 
   const onSubmit = async (data: ContactFormValues) => {
-    const ok = await submit(data)
-    if (ok) reset()
-  }
+    // const ok = await submit(data);
+    // if (ok) reset();
+    emailjs
+      .send(
+        emailjsServiceId,
+        emailjsTemplateId,
+        {
+          name: data.name,
+          email: data.email,
+          phone: data.number,
+          message: data.message,
+          toEmail: APP_CONFIG.primaryEmail,
+        },
+        emailjsPublicKey,
+      )
+      .then(() => {
+        showToast({
+          message: "Message sent — we'll get back shortly.",
+          type: "success",
+        });
+        reset();
+      })
+      .catch((err: any) => {
+        console.error("EmailJS error", err);
+        showToast({
+          message: "Failed to send — please try again.",
+          type: "error",
+        });
+      });
+    // .finally(() => setIsSubmitting(false));
+  };
 
   return (
     <form
@@ -56,14 +92,14 @@ export function ContactForm() {
         )}
       />
       <Controller
-        name="company"
+        name="number"
         control={control}
         render={({ field }) => (
           <Input
-            label="Company (optional)"
+            label="Phone number"
             {...field}
-            error={!!errors.company}
-            helperText={errors.company?.message}
+            error={!!errors.number}
+            helperText={errors.number?.message}
           />
         )}
       />
@@ -92,5 +128,5 @@ export function ContactForm() {
         Send Message
       </Button>
     </form>
-  )
+  );
 }
