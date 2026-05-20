@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { APP_CONFIG } from "@/constants/appConfig";
 import { NAV_LINKS } from "@/constants/routes";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { useAppStore } from "@/store/useAppStore";
 import { cn } from "@/utils/cn";
 

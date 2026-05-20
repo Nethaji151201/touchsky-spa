@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { aboutFeatures, aboutStats } from "@/data/placeholder";
+import { aboutFeatures } from "@/data/placeholder";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ScrollReveal } from "@/components/common/ScrollReveal";
 import { FRAMER_VARIANTS } from "@/constants/animation";

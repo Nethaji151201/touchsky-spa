@@ -10,7 +10,7 @@ import emailjs from "@emailjs/browser";
 import { useAppStore } from "@/store/useAppStore";
 
 export function ContactForm() {
-  const { submit, isSubmitting } = useContactSubmit();
+  const { isSubmitting } = useContactSubmit();
   const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
